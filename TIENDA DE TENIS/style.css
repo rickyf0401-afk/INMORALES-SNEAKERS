@@ -1,0 +1,61 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#090909;--card:#121212;--text:#f5f5f5;--muted:#999;--line:#242424}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(9,9,9,.94);backdrop-filter:blur(12px);z-index:10}
+.logo{font-size:22px;font-weight:900;letter-spacing:-1px}.logo span{font-weight:400;font-size:13px;letter-spacing:3px;margin-left:5px}
+nav{display:flex;gap:28px}nav a{color:#ccc;text-decoration:none;font-size:14px}nav a:hover{color:white}
+.cart-btn{background:white;border:0;border-radius:99px;padding:9px 14px;cursor:pointer}
+.cart-btn b{margin-left:4px}
+.hero{min-height:620px;padding:90px 8%;display:flex;align-items:center;background:radial-gradient(circle at 75% 40%,#292929 0,#111 27%,#090909 58%)}
+.hero h1{font-size:clamp(48px,8vw,94px);line-height:.9;letter-spacing:-5px;margin:16px 0 25px}.hero h1 span{color:#aaa}
+.hero p:not(.tag){color:#aaa;max-width:430px;line-height:1.6;margin-bottom:28px}
+.tag{font-size:11px;letter-spacing:3px;color:#888;font-weight:bold}
+.primary,.checkout{display:inline-block;background:white;color:#080808;padding:14px 22px;border-radius:6px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+.shop{padding:85px 6%;max-width:1400px;margin:auto}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px}.section-head h2,.about h2{font-size:42px;margin-top:10px;letter-spacing:-2px}
+#search{background:#111;border:1px solid #333;color:white;padding:13px 16px;border-radius:7px;width:250px;outline:none}
+.filters{display:flex;gap:8px;margin:32px 0}.filter{background:#111;color:#aaa;border:1px solid #2a2a2a;padding:9px 17px;border-radius:99px;cursor:pointer}.filter.active,.filter:hover{background:white;color:#111}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.product-img{height:240px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;color:#777;font-weight:bold;font-size:14px}.product-img img{width:100%;height:100%;object-fit:cover}.info{padding:18px}.brand{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:2px}.name{font-weight:bold;font-size:17px;margin:6px 0}.price{font-size:17px;margin:12px 0 15px}.sizes{display:flex;gap:5px;flex-wrap:wrap}.size{padding:6px 9px;border:1px solid #333;background:#111;color:#ddd;border-radius:4px;cursor:pointer}.size.selected{background:white;color:#111}.add{width:100%;margin-top:14px;padding:11px;background:white;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+.about{padding:100px 8%;border-top:1px solid var(--line);max-width:900px}.about p:last-child{color:#aaa;line-height:1.7;margin-top:20px}
+.overlay{display:none;position:fixed;inset:0;background:#000b;z-index:19}.cart{position:fixed;right:-430px;top:0;width:min(430px,100%);height:100%;background:#101010;z-index:20;padding:30px;transition:.3s;overflow:auto}.cart.open{right:0}.overlay.open{display:block}.close{position:absolute;right:22px;top:18px;background:none;color:white;border:0;font-size:32px;cursor:pointer}.cart h2{margin:10px 0 30px}.cart-item{display:flex;gap:12px;border-bottom:1px solid #292929;padding:15px 0}.cart-item .thumb{width:70px;height:70px;background:#ddd;color:#777;display:flex;align-items:center;justify-content:center;font-size:10px}.cart-item-info{flex:1}.remove{color:#999;background:none;border:0;margin-top:8px;cursor:pointer}.cart-total{display:flex;justify-content:space-between;border-top:1px solid #333;padding:20px 0;margin-top:20px;font-size:18px}.checkout{width:100%;text-align:center}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero{min-height:520px}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:560px){nav{display:none}.products{grid-template-columns:1fr}.product-img{height:280px}.hero h1{letter-spacing:-3px}.section-head h2,.about h2{font-size:34px}#search{width:100%}}
+/* ===== DESCUENTOS ===== */
+
+.discount {
+  display: inline-block;
+  background: #e53935;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 9px;
+  border-radius: 5px;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.price {
+  font-size: 21px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+/* Cuando no hay imagen */
+.no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+}
